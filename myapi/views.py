@@ -24,7 +24,7 @@ def cars(request):
                 # 'safe=False' for objects serialization
 
             elif request.method == 'POST':
-                Controle = None
+                Control = None
                 cars_post = JSONParser().parse(request)
                 vehicle_serializer = POSTCarsSerializer(data=cars_post)
                 print(vehicle_serializer)

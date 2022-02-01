@@ -15,14 +15,14 @@ class POSTCarsRateSerializer(serializers.HyperlinkedModelSerializer):
         model = Vehicles
         fields = ('car_id', 'rating')
 
-    def validate(self, data):
-        auction = Vehicles.objects.get(data=data['car_id'])
-        amount = data.get('rates_number')
-        amount+=1
-        print(amount)
-        if not amount:
-            msg = {'amount': ['this field is not valid']}
-            raise serializers.ValidationError(msg)
+    #def validate(self, data):
+        #auction = Vehicles.objects.get(data=data['car_id'])
+        #amount = data.get('rates_number')
+        #amount+=1
+        #print(amount)
+        #if not amount:
+            #msg = {'amount': ['this field is not valid']}
+            #raise serializers.ValidationError(msg)
 
 class GETCarsPopularSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
